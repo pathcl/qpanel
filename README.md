@@ -1,5 +1,7 @@
 # Qpanel
 
+[![Join the chat at https://gitter.im/qpanel/Lobby](https://badges.gitter.im/qpanel/Lobby.svg)](https://gitter.im/qpanel/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Qpanel is dashboard for Queues in Asterisk and FreeSWITCH
 
 ![Demo](samples/animation.gif)
@@ -16,6 +18,8 @@ Qpanel is a panel for queues on Asterisk and FreeSWITCH, powerful and simple mon
 * Allows rename the queue name or hide in case if required not show a determined queue.
 * Show callers by queue with the priority and wait time.
 * Spy, Whisper and Barge for agents on queues.
+* Show service level of queues
+* Hangup incomming calls
 * Authentication Access.
 * Simple configuration. Just use Asterisk manager.
 * Multi languages availables: English, Spanish, German, Russian and Portuguese.
@@ -29,9 +33,11 @@ Also you can use a [API of Qpanel](doc/api.md) for data query related to queues
 
 
 ## Requirement
- * Python 2.6+
+ * Python 2.6, 2.7, 3.4
  * [Flask](http://flask.pocoo.org/) 0.10+
  * [Asterisk](http://www.asterisk.org) 1.4+ and enabled manager or [FreeSWITCH](http://www.freeswitch.org) and connection permission to Event Socket Library.
+
+  The feature to scheduler reset stats a queue is required Redis Redis >= 2.6.0
 
 
 ### Asterisk
@@ -98,6 +104,13 @@ If dont have pip in your system. For install
  sudo yum install python-pip
  ```
 
+### Get Javascript, CSS and external web libraries
+Is necessary have installed Node.
+
+ ```
+    npm install
+ ```
+
 
 ##  3. Go and prepair environment
  ```
@@ -108,7 +121,7 @@ If dont have pip in your system. For install
 
 ## 4.- Translations
  ```
-  pybabel compile -d translations
+  pybabel compile -d qpanel/translations
  ```
 
 
